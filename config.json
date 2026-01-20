@@ -1,0 +1,10 @@
+{
+  "user_name": "Your Name",
+  "whatsapp_contact": "Sridutt",
+  "train_routes": [
+    {"from": "Nellore", "to": "Vijayawada"},
+    {"from": "Delhi", "to": "Mumbai"}
+  ],
+  "preferred_class": "Sleeper",
+  "screenshot_path": "/sdcard/Pictures/confirmtkt_train_details.png"
+}

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+venv/
+env/
+
+# Environment Variables (IMPORTANT: Protects your API keys)
+.env
+
+# Screenshots
+screenshots/
+
+# VS Code settings
+.vscode/
+
+# Logs
+*.log
