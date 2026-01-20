@@ -123,18 +123,8 @@ Edit `config.json` to customize your routes and contacts. Ensure the WhatsApp na
   "screenshot_path": "/sdcard/Pictures/train_details.png"
 }
 
-# Add your Gemini API key
-    echo "GEMINI_API_KEY=your_key_here" > .env
-   
-# Customize your settings
-    nano config.json  # Edit routes, WhatsApp contact, etc.
-    ```
-3. **Setup DroidRun**
-```bash
-droidrun setup
-# Follow on-screen instructions to grant accessibility permissions
 ```
-4. **Run the Agent**
+**Run the Agent**
 ```bash
 python main.py
 ```
