@@ -1,105 +1,134 @@
-# 🚆 ConfirmTkt Train Agent 🤖💬  
-### AI-Powered Train Search + WhatsApp Sharing Automation (Android)
+# 🚆 ConfirmTkt Train Agent 🤖💬
 
-> ⚡ A fully automated Android AI Agent that searches train availability on ConfirmTkt, captures the best options, and instantly shares them via WhatsApp — **without manual effort**.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![DroidRun](https://img.shields.io/badge/Powered%20By-DroidRun-green)](https://github.com/droidrun-ai/droidrun)
+[![Android](https://img.shields.io/badge/Platform-Android-3DDC84.svg)](https://www.android.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-⭐ If you're into **Agentic AI**, **Mobile Automation**, or **Android Vision Agents**, this project will blow your mind.
+> **AI-Powered Train Search + WhatsApp Sharing Automation**
 
----
-
-## 🔥 Why This Repo is Special?
-
-Most automation projects break when UI changes.  
-This one doesn’t.
-
-✅ **Vision-Based AI Agent**  
-✅ **Natural Language Control**  
-✅ **Real Android Interaction** (not simulated UI selectors)  
-✅ **Multi-App Workflow** (ConfirmTkt ➝ WhatsApp)  
-✅ **Resilient + Retry-ready**
+A fully automated Android AI Agent that searches train availability on ConfirmTkt, captures the best options via screenshot, and instantly shares them via WhatsApp—**without manual effort**.
 
 ---
 
-## 🎯 What It Can Do (Features)
+## 🔥 Overview
 
-✨ **Smart Train Search**
-- Enter source & destination automatically
-- Select travel date smoothly
-- Pick preferred class (Sleeper/3AC/etc.)
+Most automation projects break when UI changes. This one doesn't.
 
-👁️ **Availability Detection**
-- Detect trains with available seats using screenshot intelligence  
-- Choose the best train option like a human would
+By leveraging **Gemini Vision** and **DroidRun**, this agent "sees" the screen like a human, making it resilient to layout updates.
 
-📸 **Auto Screenshot Capture**
-- Opens train details
-- Captures important info
-- Saves it for sharing/logging
-
-💬 **WhatsApp Auto Sharing**
-- Opens WhatsApp
-- Selects contact
-- Shares screenshot instantly
-
-🔁 **Retry + Resilience**
-- Handles UI delays
-- Works even if screens load slowly
-- Built-in fallback strategies
-
-📊 **Live Terminal Monitoring**
-- Color-coded logs
-- Clear progress status
-- Easy to debug
-
-⚙️ **Fully Configurable**
-- Routes
-- Contacts
-- Class preferences
-- Screenshot locations
+* ✅ **Vision-Based AI Agent** (No brittle XML selectors)
+* ✅ **Natural Language Control**
+* ✅ **Multi-App Workflow** (ConfirmTkt ➝ WhatsApp)
+* ✅ **Real Android Interaction** via ADB
 
 ---
 
-## 🎥 Demo Video (Must Watch)
+## 🎯 Features
 
-📌 Watch here: https://youtu.be/sYuRD4RcvHs  
-*(This demo alone makes it worth a ⭐ 😄)*
+### ✨ Smart Train Search
+* Inputs source & destination stations automatically.
+* Selects travel dates and preferred travel class (Sleeper, 3AC, etc.).
+
+### 👁️ Availability Detection
+* Uses Gemini Vision to detect seat availability from the screen.
+* Intelligently selects the best train option based on status.
+
+### 📸 Auto Screenshot & Sharing
+* Captures train details automatically.
+* Opens WhatsApp, finds your specified contact, and shares the screenshot.
+
+### 🔁 Resilience
+* Handles UI delays and slow loading screens.
+* Includes built-in retry mechanisms and fallback strategies.
+
+---
+
+## 🎥 Demo
+
+**[📺 Watch the Demo Video on YouTube](https://youtu.be/sYuRD4RcvHs)**
 
 ---
 
 ## 🧠 Tech Stack
 
-- **DroidRun** → Vision-first Android AI automation  
-- **Gemini Vision + LLM** → Understanding screen + making decisions  
-- **ADB** → Executes taps, swipes, typing, app switching  
-- **Python Async Agent Workflow** → Modular multi-step execution
+| Component | Description |
+| :--- | :--- |
+| **DroidRun** | Vision-first Android automation framework |
+| **Gemini Vision** | Multimodal LLM for screen understanding & reasoning |
+| **ADB** | Executes taps, swipes, and text input on the device |
+| **Python** | Async agent workflow orchestration |
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 ### Prerequisites
-- Android device/emulator with USB debugging enabled
-- Python 3.8+
-- Gemini API key ([Get one here](https://aistudio.google.com/app/apikey))
-- ConfirmTkt and WhatsApp installed on device
+* Android device or Emulator with **USB Debugging Enabled**.
+* Python 3.8+.
+* **ConfirmTkt** and **WhatsApp** installed on the device.
+* A Google **Gemini API Key** ([Get it here](https://aistudio.google.com/app/apikey)).
 
 ### Installation
-1. **Clone & Setup**
-   ```bash
-   git clone https://github.com/sridutt15/ConfirmTkt-Agent-Using-Droidrun.git
-   cd ConfirmTktTrainAgent
-   python3 -m venv venv
-   source venv/bin/activate  # Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-```
-2. **Configure Environment**
-```bash
+
+1.  **Clone the Repository**
+    ```bash
+    git clone [https://github.com/sridutt15/ConfirmTkt-Agent-Using-Droidrun.git](https://github.com/sridutt15/ConfirmTkt-Agent-Using-Droidrun.git)
+    cd ConfirmTktTrainAgent
+    ```
+
+2.  **Set Up Virtual Environment**
+    ```bash
+    # Linux/macOS
+    python3 -m venv venv
+    source venv/bin/activate
+
+    # Windows
+    python -m venv venv
+    venv\Scripts\activate
+    ```
+
+3.  **Install Dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Configure Environment**
+    Create a `.env` file in the root directory:
+    ```ini
+    GEMINI_API_KEY=your_actual_api_key_here
+    ```
+
+5.  **Initialize DroidRun**
+    ```bash
+    droidrun setup
+    # Follow on-screen instructions to grant accessibility permissions
+    ```
+
+---
+
+## ⚙️ Configuration
+
+Edit `config.json` to customize your routes and contacts. Ensure the WhatsApp name matches your phone contacts exactly.
+
+```json
+{
+  "user_name": "Sridutt",
+  "whatsapp_contact": "Travel Buddy",
+  "train_routes": [
+    {"from": "Nellore", "to": "Vijayawada"},
+    {"from": "Mumbai Central", "to": "Delhi"}
+  ],
+  "preferred_class": "Sleeper",
+  "screenshot_path": "/sdcard/Pictures/train_details.png"
+}
+
 # Add your Gemini API key
-echo "GEMINI_API_KEY=your_key_here" > .env
+    echo "GEMINI_API_KEY=your_key_here" > .env
    
 # Customize your settings
-nano config.json  # Edit routes, WhatsApp contact, etc.
-```
+    nano config.json  # Edit routes, WhatsApp contact, etc.
+    ```
 3. **Setup DroidRun**
 ```bash
 droidrun setup
@@ -109,7 +138,7 @@ droidrun setup
 ```bash
 python main.py
 ```
-**Architecture**
+**Project Architecture**
 
 ConfirmTkt Train Agent follows a modular agent-based architecture powered by DroidRun:
 ``` bash
@@ -146,6 +175,7 @@ Edit `config.json` to match your preferences:
   "preferred_class": "Sleeper",
   "screenshot_path": "/sdcard/Pictures/train_details.png"
 }
+```
 ## About DroidRun
 
 [DroidRun](https://github.com/droidrun-ai/droidrun) is the core automation framework that enables this project's capabilities:
@@ -177,30 +207,39 @@ Edit `config.json` to match your preferences:
 
 ### Debug Mode
 ```bash
-# Run with detailed logging
 python main.py --verbose
+```
 
-# Test individual components
+# **Test individual components**
+```
 python -c "from agents.search_trains import test; import asyncio; asyncio.run(test())"
-## License & Ethics
+```
 
+## **License & Ethics**
+
+```
 This project is for educational demonstration only. Users must:
 - Respect ConfirmTkt and WhatsApp terms of service
 - Use automation responsibly and ethically
 - Not overload services with excessive requests
 - Comply with all applicable laws and regulations
 
-## Contributing
+```
 
+## **Contributing**
+
+```
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/Improvement`)
 3. Commit changes (`git commit -m 'Add some Improvement'`)
 4. Push to branch (`git push origin feature/Improvement`)
 5. Open a Pull Request
+```
 
 ## Acknowledgments
 
-- **DroidRun Team** for the revolutionary automation framework
-- **Google Gemini** for powerful vision-language capabilities
-- **ConfirmTkt** for train booking services
-- **WhatsApp** for messaging platform integration
+```
+- DroidRun Team for the revolutionary automation framework
+- Google Gemini for powerful vision-language capabilities
+- ConfirmTkt for train booking services
+- WhatsApp for messaging platform integration
